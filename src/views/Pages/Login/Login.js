@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import $ from "jquery";
 import { ToastContainer, toast } from "react-toastify";
+
 import {
   Button,
   Card,
@@ -161,6 +162,13 @@ class Login extends Component {
   render() {
     return (
       <div className="app flex-row align-items-center">
+        <div className="sk-wave">
+          <div className="sk-rect sk-rect1" />
+          <div className="sk-rect sk-rect2" />
+          <div claclassNamess="sk-rect sk-rect3" />
+          <div className="sk-rect sk-rect4" />
+          <div className="sk-rect sk-rect5" />
+        </div>
         <ToastContainer
           position="top-left"
           type="default"
