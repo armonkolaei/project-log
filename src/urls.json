@@ -1,0 +1,6 @@
+{
+  "server": "https://apidev.logitini.com",
+  "development_mode": "Debug",
+  "version": "0.0.1",
+  "portal": "dev"
+}

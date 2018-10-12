@@ -1,12 +1,13 @@
 {
-  "name": "@coreui/coreui-free-react-admin-template",
+  "name": "project-log",
   "version": "2.0.13",
-  "description": "CoreUI React Open Source Bootstrap 4 Admin Template",
+  "description": "CoreUI React Open Source Loger",
   "author": "Łukasz Holeczek",
   "homepage": "https://coreui.io",
   "copyright": "Copyright 2018 creativeLabs Łukasz Holeczek",
   "license": "MIT",
   "private": true,
+  "jquery": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
@@ -25,7 +26,8 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "flag-icon-css": "^3.2.0",
     "font-awesome": "^4.7.0",
-    "jquery": "3.3.1",
+    "jquery": "*",
+    "history": "^4.7.2",
     "node-sass": "^4.9.3",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
@@ -36,6 +38,7 @@
     "react-router-config": "^4.4.0-beta.1",
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.5.2",
+    "react-toastify": "3.0.0",
     "reactstrap": "^6.5.0",
     "simple-line-icons": "^2.4.1"
   },
@@ -60,5 +63,6 @@
     "not dead",
     "not ie <= 9",
     "not op_mini all"
-  ]
+  ],
+  "keywords": []
 }
