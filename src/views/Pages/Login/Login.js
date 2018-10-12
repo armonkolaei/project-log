@@ -2,6 +2,20 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import $ from "jquery";
 import { ToastContainer, toast } from "react-toastify";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardGroup,
+  Col,
+  Container,
+  Form,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Row
+} from "reactstrap";
 // import 'react-toastify/dist/ReactToastify.min.css';
 
 import urls from "../../../urls.json";
@@ -146,7 +160,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="app flex-row align-items-center version-main">
+      <div className="app flex-row align-items-center">
         <ToastContainer
           position="top-left"
           type="default"
@@ -165,19 +179,24 @@ class Login extends Component {
             <div className="sk-rect sk-rect5" />
           </div>
         ) : (
-          <div className="container">
-            <div className="row justify-content-center">
-              {!this.state.login_success ? (
-                <div className="col-md-8">
-                  <div className="card-group mb-0">
-                    <div className="card p-4 login-card">
-                      <div className="card-block">
+          <Container>
+            <Row className="justify-content-center">
+              <Col md="8">
+                <CardGroup>
+                  <Card className="p-4">
+                    <CardBody>
+                      <Form>
                         <h1>Login</h1>
+
                         <p className="text-muted">Sign In to your account</p>
-                        <div className="input-group mb-3">
-                          <span className="input-group-addon">
-                            <i className="icon-user" />
-                          </span>
+
+                        <InputGroup className="mb-3">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="icon-user" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
                           <input
                             type="text"
                             className="form-control"
@@ -185,11 +204,15 @@ class Login extends Component {
                             value={this.state.email}
                             onChange={this.updateState}
                           />
-                        </div>
-                        <div className="input-group mb-4">
-                          <span className="input-group-addon">
-                            <i className="icon-lock" />
-                          </span>
+                        </InputGroup>
+
+                        <InputGroup className="mb-4">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="icon-lock" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+
                           <input
                             type="password"
                             className="form-control"
@@ -197,9 +220,10 @@ class Login extends Component {
                             value={this.state.password}
                             onChange={this.updatePasswordState}
                           />
-                        </div>
-                        <div className="row">
-                          <div className="col-6">
+                        </InputGroup>
+
+                        <Row>
+                          <Col xs="6">
                             <button
                               type="button"
                               onClick={this.loginUser}
@@ -207,70 +231,45 @@ class Login extends Component {
                             >
                               Login
                             </button>
-                          </div>
+                          </Col>
 
-                          <div className="col-6 text-right">
+                          <Col xs="6" className="text-right">
                             <Link
                               to="/recover_password"
                               className="btn btn-link px-0"
                             >
                               Forgot password?
                             </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="card bg-primary py-5 d-md-down-none registration-card"
-                      style={{ width: 44 + "%" }}
-                    >
-                      <div className="card-block text-center">
-                        <div>
-                          <h2>Register</h2>
-                          <p>Sign up to discover the noodles</p>
-                          <Link
-                            className="btn btn-primary active mt-3"
-                            to="/register"
-                          >
-                            Register Now!
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="col-md-6">
-                  <div className="card mx-4">
-                    <div className="card-block p-4">
-                      <h4 style={{ marginBottom: "15px" }}>
-                        We have sent you an email to verify your email address.
-                        Please check your mailbox and be sure to check your junk
-                        mail as well.
-                      </h4>
+                          </Col>
+                        </Row>
+                      </Form>
+                    </CardBody>
+                  </Card>
 
-                      <button
-                        className="btn btn-block btn-success"
-                        onClick={this.getProfile}
-                      >
-                        Continue
-                      </button>
-                      <button
-                        className="btn btn-block btn-success"
-                        onClick={this.verifyEmail}
-                      >
-                        Resend Email
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
+                  <Card
+                    className="text-white bg-primary py-5 d-md-down-none"
+                    style={{ width: 44 + "%" }}
+                  >
+                    <CardBody className="text-center">
+                      <div>
+                        <h2>Sign up</h2>
+
+                        <p>Sign up to discover the noodles.</p>
+
+                        <Link
+                          className="btn btn-primary active mt-3"
+                          to="/register"
+                        >
+                          Register Now!
+                        </Link>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </CardGroup>
+              </Col>
+            </Row>
+          </Container>
         )}
-        <div className="version-text">
-          <div className="version-display-login">Version : {urls.version}</div>
-        </div>
       </div>
     );
   }
